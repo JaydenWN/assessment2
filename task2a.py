@@ -1,3 +1,7 @@
+# Original Author: Jayden Naylon
+# https://github.com/JaydenWN
+# -------------------------------
+
 # To convert the provided for loop into a while loop we first
 # must declare a variable i and assign it to 1 as the provided range()
 # functions first step will begin at the int 1.

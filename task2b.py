@@ -1,3 +1,7 @@
+# Original Author: Jayden Naylon
+# https://github.com/JaydenWN
+# -------------------------------
+
 # The Range function takes a start int, followed by a stop int, and a step definition:
 # https://docs.python.org/3/library/functions.html#func-range
 

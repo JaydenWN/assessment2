@@ -1,3 +1,7 @@
+# Original Author: Jayden Naylon
+# https://github.com/JaydenWN
+# -------------------------------
+
 # 1 = = = = = = = = = =
 print('= = = = Section 1 = = = =')
 
