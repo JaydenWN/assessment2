@@ -24,7 +24,7 @@ s = 0
 while i > 0:
     # We add s to to i, then assign the value to s.
     s+=i
-
+    
     #print(rangeList[i-1] == i)
     
     # We decrease our 'step' by one by subtracting i by 1, then assigning the value to i.
