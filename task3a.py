@@ -12,6 +12,7 @@ b=10
 # However, the attempted while loop malfunctions due to incorrect declaration.
 # i.e. The capital 'W', brackets and lack of semicolon will lead to a syntax error.
 # Also this loop will never run due to b being initialised as 10.
+# https://docs.python.org/3/reference/compound_stmts.html#while
 While (b<10)
 
 # It would seem that the original developer is trying to print 'Hello' to the terminal.
@@ -20,6 +21,7 @@ While (b<10)
 # It also seems like the original developer was trying to include this in the aforementioned while loop,
 # however they never indented the line.
 # This would lead to a syntax error.
+# https://docs.python.org/3/library/functions.html#print
 Print (“Hello”)
        
 # This line is programmed correctly, however it seems the original developer wished for this
