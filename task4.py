@@ -125,7 +125,7 @@ def main():
 requirementList = ['nicegui']
 
 # Collect all installed libs
-installedLibs = subprocess.run(['pip', 'list'], capture_output=True, text=True)
+installedLibs = subprocess.run(['pip3', 'list'], capture_output=True, text=True)
 installedLibsStr = str(installedLibs.stdout)
 libListListed = re.findall(r'[a-z_-]+', installedLibsStr)
 currentOS = platform.system()
@@ -141,18 +141,19 @@ else:
     # Instead of standard outputting to terminal its redirected into a pipe for further manipulation,
     # Instead of outputting to terminal for instance
     print(f'Attempting to download dependencies for this project: \n{requirementList}')
-    checkConnection = subprocess.run(['ping', 'google.com'], stdout=subprocess.PIPE)
+    
+    checkConnection = ''
+
+    # if the OS is mac, then ping will continue until user terminates it.
+    if currentOS == 'Darwin':
+        checkConnection = subprocess.run(['ping', 'google.com', '-c', '1'], stdout=subprocess.PIPE)
+    else:
+        checkConnection = subprocess.run(['ping', 'google.com'], stdout=subprocess.PIPE)
 
     # If subprocess returns with an error code (1) then alert user, otherwise install dependencies
     if checkConnection.returncode == 0:
-        
-        # Check what platform user is running on, if its os, then python3 needs to be used.
-        if currentOS == 'Darwin':
-            checkForPipInstall = subprocess.run(['python3', '-m', 'pip', '--upgrade', 'pip'], capture_output=True, text=True)
-            print(checkForPipInstall.stdout)
-        else:
-            checkForPipInstall = subprocess.run(['python', '-m', 'pip', '--upgrade', 'pip'], capture_output=True, text=True)
-            print(checkForPipInstall.stdout)
+        checkForPipInstall = subprocess.run(['python3', '-m', 'pip3', '--upgrade', 'pip3'], capture_output=True, text=True)
+        print(checkForPipInstall.stdout)
 
         # Loop over requirementList and install each dependency using pip.
         for dependency in requirementList:
