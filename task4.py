@@ -156,7 +156,7 @@ else:
 
         # Loop over requirementList and install each dependency using pip.
         for dependency in requirementList:
-            installDependencies = subprocess.run(['pip', 'install', '--upgrade', dependency], capture_output=True, text=True)
+            installDependencies = subprocess.run(['pip3', 'install', '--upgrade', dependency], capture_output=True, text=True)
             print(installDependencies.stdout)
         main()
     else:
