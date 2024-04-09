@@ -152,13 +152,23 @@ else:
 
     # If subprocess returns with an error code (1) then alert user, otherwise install dependencies
     if checkConnection.returncode == 0:
-        checkForPipInstall = subprocess.run(['python3', '-m', 'pip3', '--upgrade', 'pip3'], capture_output=True, text=True)
-        print(checkForPipInstall.stdout)
-
+        # macos requires --user
+        if currentOS == 'Darwin':
+            checkForPipInstall = subprocess.run(['pip3', 'install', '--upgrade', 'pip', '--user'], capture_output=True, text=True)
+            print(checkForPipInstall.stdout)
+        else: 
+            checkForPipInstall = subprocess.run(['pip3', 'install', '--upgrade', 'pip'], capture_output=True, text=True)
+            print(checkForPipInstall.stdout)
         # Loop over requirementList and install each dependency using pip.
         for dependency in requirementList:
-            installDependencies = subprocess.run(['pip3', 'install', '--upgrade', dependency], capture_output=True, text=True)
-            print(installDependencies.stdout)
+            # macos requires --user
+            if currentOS =='Darwin':
+                installDependencies = subprocess.run(['pip3', 'install', dependency, '--user'], capture_output=True, text=True)
+                print(installDependencies.stdout)
+            else: 
+                installDependencies = subprocess.run(['pip3', 'install', dependency], capture_output=True, text=True)
+                print(installDependencies.stdout)
+        # Finally execute the file.
         main()
     else:
         print('You are not connected to the internet, please connect and try again!')
