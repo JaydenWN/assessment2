@@ -1,7 +1,10 @@
-# Original Author: Payal
-#
-# Contributors : Jayden Naylon
+# Developers: 
+# Jayden Naylon
 # https://github.com/JaydenWN
+# A00150649
+#
+# Payal -
+# A00135758
 # -------------------------------
 
 # Sets the integer 10 to the variable b.

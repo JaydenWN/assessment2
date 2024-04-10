@@ -1,5 +1,10 @@
-# Original Author: Jayden Naylon
+# Developers: 
+# Jayden Naylon
 # https://github.com/JaydenWN
+# A00150649
+#
+# Payal -
+# A00135758
 # -------------------------------
 
 # The Range function takes a start int, followed by a stop int, and a step definition:

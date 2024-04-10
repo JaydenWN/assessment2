@@ -1,5 +1,10 @@
-# Original Author: Jayden Naylon
+# Developers: 
+# Jayden Naylon
 # https://github.com/JaydenWN
+# A00150649
+#
+# Payal -
+# A00135758
 # -------------------------------
 
 # To convert the provided for loop into a while loop we first
