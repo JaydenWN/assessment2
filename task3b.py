@@ -1,3 +1,11 @@
+# Developers: 
+# Jayden Naylon
+# https://github.com/JaydenWN
+# A00150649
+#
+# Payal -
+# A00135758
+# -------------------------------
 # This assigns the integer 1 to the variable i 
 i=1
 
