@@ -23,10 +23,12 @@ def main():
     # https://nicegui.io/documentation/section_styling_appearance#query_selector
     ui.query('body').classes('bg-stone-900')
 
-    # Setting a global variable of how many tickets can be 'purchased'
+    # Setting a global scoped variable of how many tickets can be 'purchased'
+    global tickets_remaining
     tickets_remaining = 200
 
     # Used to check if 50th ticket has been purchased.
+    global fiftyTrig
     fiftyTrig = False
 
     # Defining functions that will be used when user interacts with the app
@@ -58,6 +60,7 @@ def main():
         # Allows use of the fiftyTrig and tickets_remaining global scoped variable within the function
         global fiftyTrig
         global tickets_remaining
+
 
         # Checks to see if username or ticketQty isn't declared as a global variable.
         # If one of the two aren't declared, then a nicegui notification will pop up on the users screen.
@@ -113,6 +116,7 @@ def main():
     
         # Creates a 2 column css grid, with padding styling from tailwind.
         # https://nicegui.io/documentation/grid#grid_element
+        
         with ui.grid(columns=2).classes('p-10'):
 
             # Number input for the amount of tickets a user wishes to purchase.
